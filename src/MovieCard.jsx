@@ -11,7 +11,7 @@ export const MovieCard = ({ movie, liked, onToggle }) => {
 			}}
 		>
 			<div className="picture" aria-hidden="true">
-				{movie.icon}
+				{movie.img ? <img src={movie.img} /> : movie.icon}
 			</div>
 			<p className="small mt-3 mb-3">
 				{movie.category} | {movie.duration}
