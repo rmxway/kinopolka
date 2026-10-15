@@ -6,7 +6,9 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: #d6d4cd;
+	min-width: 360px;
 	color: #4a4635;
+	overflow-y: scroll;
 }
 
 header {
@@ -21,8 +23,23 @@ header p {
 	margin: auto;
 }
 
+main {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main > section {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.request {
+	margin-top: auto;
+}
+
 .announce {
-	margin-bottom: 40px;
 	max-width: 400px;
 }
 
@@ -97,4 +114,16 @@ footer {
 	background-color: #d7d7d7;
 	border-radius: 8px;
 	font-size: 2rem;
+}
+
+@media (max-width: 991px) {
+	.cards {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 767px) {
+	.cards {
+		grid-template-columns: repeat(1, minmax(300px, 1fr));
+	}
 }

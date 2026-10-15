@@ -5,12 +5,12 @@ export const MovieCard = ({ movie, liked, onToggle }) => {
 	return (
 		<motion.article
 			className="movie"
-			whileHover={{ y: -4 }}
+			whileHover={{ scale: 1.03 }}
+			transition={{
+				duration: 0.2,
+			}}
 		>
-			<div
-				className="picture"
-				aria-hidden="true"
-			>
+			<div className="picture" aria-hidden="true">
 				{movie.icon}
 			</div>
 			<p className="small mt-3 mb-3">

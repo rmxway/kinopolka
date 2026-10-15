@@ -10,15 +10,14 @@ export const RequestForm = () => {
 	}
 
 	return (
-		<section
-			className="request"
-			aria-labelledby="request-title"
-		>
+		<section className="request" aria-labelledby="request-title">
 			<h2>Анонсы киновечеров</h2>
 			<p>Обязательно сохраним ваш адрес</p>
 			{submitted ? (
 				<div role="status">
-					<p className="alert alert-success">Отлично. Введенный адрес: {email}</p>
+					<p className="alert alert-success">
+						Отлично. Введенный адрес: {email}
+					</p>
 					<button
 						type="button"
 						className="btn btn-outline-success"
@@ -31,10 +30,7 @@ export const RequestForm = () => {
 					</button>
 				</div>
 			) : (
-				<form
-					className="announce"
-					onSubmit={handleSubmit}
-				>
+				<form className="announce" onSubmit={handleSubmit}>
 					<label htmlFor="email">Электронная почта</label>
 					<div className="input-group">
 						<input
@@ -46,10 +42,7 @@ export const RequestForm = () => {
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
 						/>
-						<button
-							className="btn btn-success"
-							type="submit"
-						>
+						<button className="btn btn-primary" type="submit">
 							Проверить форму
 						</button>
 					</div>
