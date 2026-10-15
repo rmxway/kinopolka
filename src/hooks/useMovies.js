@@ -13,7 +13,7 @@ export const useMovies = () => {
 
 		async function load() {
 			try {
-				const response = await fetch(`${import.meta.env.BASE_URL}movies.json`, {
+				const response = await fetch(`${import.meta.env.BASE_URL}/movies.json`, {
 					signal: controller.signal,
 				});
 
