@@ -1,6 +1,28 @@
 # КИНОПОЛКА
 
-ссылка на проект в фигме:
-https://www.figma.com/design/CmptoR23afs0Ktqlod3hv9/Icons?node-id=2019-12&t=24SZ5tlf1WDjYbBu-1
+## Стек:
 
-проект на github pages: https://rmxway.github.io/kinopolka/
+- HTML
+- CSS
+- JS
+- React
+- gh-pages
+
+## Инструкция по запуску
+
+```bash
+npm run dev      # Запуск разработки
+npm run build    # Сборка для продакшена
+npm run preview  # Запуск продакшен версии
+npm run lint     # Проверка кода на ошибки ESLint
+```
+
+Пуш собранного проекта в текущий репозиторий (ветка gh-pages). **Важно!** Перед выполнением команды собрать проект через **npm run build** (должна быть папка dist)
+```bash
+npm run deploy 
+```
+
+### ссылки
+
+- Github pages: https://rmxway.github.io/kinopolka/
+- Github: https://github.com/rmxway/kinopolka
