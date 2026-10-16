@@ -2,16 +2,18 @@ import { useState, useEffect } from 'react';
 
 const STORAGE_KEY = 'movie-watch-list';
 
-function readFavorites() {
+const readFavorites = () => {
 	try {
 		const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-		return Array.isArray(saved) ? saved.filter((id) => Number.isInteger(id)) : [];
+		return Array.isArray(saved)
+			? saved.filter((id) => Number.isInteger(id))
+			: [];
 	} catch {
 		return [];
 	}
-}
+};
 
-export default function useFavorites() {
+export const useFavorites = () => {
 	const [favorites, setFavorites] = useState(readFavorites);
 	const [error, setError] = useState('');
 
@@ -26,9 +28,11 @@ export default function useFavorites() {
 
 	function toggle(id) {
 		setFavorites((current) =>
-			current.includes(id) ? current.filter((item) => item !== id) : [...current, id]
+			current.includes(id)
+				? current.filter((item) => item !== id)
+				: [...current, id],
 		);
 	}
 
-	return { favorites, toggle, error };
-}
+	return { favorites, toggle, error, clear: () => setFavorites([]) };
+};

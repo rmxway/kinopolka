@@ -4,10 +4,10 @@ export const RequestForm = () => {
 	const [email, setEmail] = useState('');
 	const [submitted, setSubmitted] = useState(false);
 
-	function handleSubmit(event) {
+	const handleSubmit = (event) => {
 		event.preventDefault();
 		setSubmitted(true);
-	}
+	};
 
 	return (
 		<section className="request" aria-labelledby="request-title">

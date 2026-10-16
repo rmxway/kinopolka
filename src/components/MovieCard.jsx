@@ -33,5 +33,3 @@ export const MovieCard = ({ movie, liked, onToggle }) => {
 		</motion.article>
 	);
 };
-
-export default MovieCard;
