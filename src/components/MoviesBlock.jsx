@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
+
 import { useFavorites, useMovies } from '../hooks';
 import { FilterButton, MovieCard, RequestForm } from './';
 
@@ -30,13 +32,21 @@ export const MoviesBlock = () => {
 					condition={tab === 'favorites'}
 					setTab={() => setTab('favorites')}
 				>
-					Моё избранное ({countFavorites})
+					Избранное ({countFavorites})
 				</FilterButton>
-				{countFavorites != 0 && (
-					<button className="btn btn-primary" onClick={clear}>
-						Удалить избранное
-					</button>
-				)}
+				<AnimatePresence>
+					{countFavorites != 0 && (
+						<motion.button
+							initial={{ opacity: 0, x: 10 }}
+							animate={{ opacity: 1, x: 0 }}
+							exit={{ opacity: 0, x: 10 }}
+							className="btn btn-primary"
+							onClick={clear}
+						>
+							Удалить избранное
+						</motion.button>
+					)}
+				</AnimatePresence>
 			</nav>
 			<form role="search" onSubmit={(e) => e.preventDefault()}>
 				<label htmlFor="search">Поиск по названию</label>
